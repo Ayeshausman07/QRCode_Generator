@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR GENERATOR</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css" rel="stylesheet" />
+
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: palevioletred;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .card img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        /* Input and button styling */
+        #qrText {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            transition: border 0.3s ease;
+        }
+
+        #qrText:focus {
+            border-color: #dc4c4c;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #dc4c4c;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #bf3c3c;
+        }
+
+        /* QR Image Box */
+        #imgBox {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        #qrImage {
+            max-width: 100%;
+            max-height: 150px;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 30px;
+            color: white;
+        }
+
+        footer h3 {
+            font-size: 18px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Mobile responsive styling */
+        @media (max-width: 576px) {
+            .card {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div>
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp" alt="Bulb" />
+            <h3 class="mb-4">QR Code Generator</h3>
+
+            <input type="text" id="qrText" placeholder="Enter text for QR code" />
+
+            <div id="imgBox">
+                <img src="" id="qrImage" alt="QR Code" />
+            </div>
+
+            <button onclick="qrGenerator()">Generate QR Code</button>
+        </div>
+
+        <footer>
+            <h3><span style="color: #696969;">Creator:</span> <span style="background-color: rgb(222, 207, 219); color: rgb(255, 73, 64); border-radius: 6px; margin: 10px; padding: 5px;">Ayesha Usman</span></h3>
+            <p style="color: #696969;">© <span id="date"></span> <em>QR Code Generator</em></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
